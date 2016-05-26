@@ -1,0 +1,24 @@
+{
+  "name": "scaffold",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/szxy00000/scaffold.git"
+  },
+  "author": "luoxincheng@baidu.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/szxy00000/scaffold/issues"
+  },
+  "homepage": "https://github.com/szxy00000/scaffold#readme",
+  "dependencies": {
+    "ejs": "^2.4.2",
+    "express": "^4.13.4",
+    "nunjucks": "^2.4.2"
+  }
+}
