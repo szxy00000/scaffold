@@ -24,14 +24,30 @@ app.get('/getBird', function(req, res) {
         req.connection.socket.remoteAddress;
     var ip = ipStr.match(/\d+\.\d+\.\d+\.\d+/)[0];
     res.send('get')
+    arr.forEach(function(one) {
+    	if (one.ip === ip) {
+    		return;
+    	}
+    })
 	arr.push({
 		ip: ip,
 		port: req.query.port,
 		name: req.query.name
 	})
+	setTimeout(function() {
+		removeBy(arr, 'ip', ip);
+	},20000)
 });
 
 // 启动及端口
 http.createServer(app).listen(app.get('port'), function() {
     console.log('Express server listening on port ' + app.get('port'));
 });
+
+function removeBy(arr, key, val) {
+	arr.forEach(function(one) {
+		if (one[key] === val) {
+			arr.splice(arr.indexOf(one), 1);
+		}
+	})
+}
