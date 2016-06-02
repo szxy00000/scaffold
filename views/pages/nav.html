@@ -1,0 +1,33 @@
+<div id="nav">
+	<h4 id="nav-title">
+		U U check now
+		<br>
+		<span>一个让非FE同学看到FE开发环境的平台<span>
+	</h4>
+	<div class="list-wrap">
+		{% for fe in feList %}
+		<div class="wrap">
+			<div class="location">
+				<div>位置: {{ fe.ipType.location }}</div>
+				<div>网络连接: {{ fe.ipType.wifi }}</div>
+			</div>
+			<img data-src="http://{{ fe.ip }}:{{ fe.port }}/favicon.ico" onerror="this.src='imgs/pig.jpg'" src="imgs/pig.jpg" width="20" height="20">
+				<span class="a-wrap">
+					<a href="http://{{ fe.ip }}:{{ fe.port }}" class="a">{{ fe.name }}</a>
+					<a href="http://{{ fe.ip }}:{{ fe.port }}" class="blank" target="_blank">新窗口打开</a>
+				</span>
+			<div class="desc">
+			{% for demo in fe.demos %}
+				<span class="a-wrap">
+					<a href="http://{{ fe.ip }}:{{ fe.port }}/{{ demo.path }}" class="a">{{ demo.desc }}</a>
+					<a href="http://{{ fe.ip }}:{{ fe.port }}/{{ demo.path }}" class="blank">新窗口打开</a>
+					<br>
+				</span>
+			{% endfor %}
+			</div>
+		</div>
+		{% endfor %}
+		<div class="list-bottom"></div>
+	</div>
+	<span id="arrow"></span>
+</div>

@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/szxy00000/scaffold#readme",
   "dependencies": {
-    "ejs": "^2.4.2",
+    "body-parser": "^1.15.1",
     "express": "^4.13.4",
-    "nunjucks": "^2.4.2"
+    "swig": "^1.4.2"
   }
 }
