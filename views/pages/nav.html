@@ -11,7 +11,7 @@
 				<div>位置: {{ fe.ipType.location }}</div>
 				<div>网络连接: {{ fe.ipType.wifi }}</div>
 			</div>
-			<img data-src="http://{{ fe.ip }}:{{ fe.port }}/favicon.ico" onerror="this.src='imgs/pig.jpg'" src="imgs/pig.jpg" width="20" height="20">
+			<img data-src="http://{{ fe.ip }}:{{ fe.port }}/favicon.ico" src="imgs/pig.jpg" width="20" height="20">
 				<span class="a-wrap">
 					<a href="http://{{ fe.ip }}:{{ fe.port }}" class="a">{{ fe.name }}</a>
 					<a href="http://{{ fe.ip }}:{{ fe.port }}" class="blank" target="_blank">新窗口打开</a>
@@ -20,7 +20,7 @@
 			{% for demo in fe.demos %}
 				<span class="a-wrap">
 					<a href="http://{{ fe.ip }}:{{ fe.port }}/{{ demo.path }}" class="a">{{ demo.desc }}</a>
-					<a href="http://{{ fe.ip }}:{{ fe.port }}/{{ demo.path }}" class="blank">新窗口打开</a>
+					<a href="http://{{ fe.ip }}:{{ fe.port }}/{{ demo.path }}" target="_blank" class="blank">新窗口打开</a>
 					<br>
 				</span>
 			{% endfor %}

@@ -5,7 +5,9 @@
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
-	{% include './pages/nav.html' %}
+	<div id="nav-wrap">
+		{% include './pages/nav.html' %}
+	</div>
 	{% include './pages/paint-box.html' %}
 	<div id="pencil" class="lock"></div>
 	<iframe id="iframe" src="/demo"></iframe>
@@ -14,7 +16,15 @@
 		<input type="text"></input>
 	</div>
 	<div id="cursor"></div>
+	<div id="rectangle"></div>
 </body>
 <script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/socket.io-1.2.0.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
+<script>
+  	var socket= io.connect('http://athena.eux.baidu.com:8301');
+	socket.on('updateList', function (html) {
+        $('#nav-wrap').html(html)
+    });
+</script>
 </html>

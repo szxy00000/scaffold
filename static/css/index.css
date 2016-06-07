@@ -1,7 +1,5 @@
 body{
 	color: blue;
-	// background: url('bj.jpg') center 10% no-repeat;
-	// background-size: 100%;
 	margin: 0;
 	padding: 0;
 }
@@ -140,6 +138,7 @@ iframe{
 }
 #paint-box{
 	position: fixed;
+	min-height: 678px;
 	right: 0;
 	top: 0;
 	background: rgba(0, 0, 0, 0.7);
@@ -246,6 +245,51 @@ iframe{
 	display: inline-block;
 	cursor: pointer;
 }
+#rect{
+	border: solid 2px red;
+	width: 45px;
+	height: 30px;
+	margin: 5px;
+	float: right;
+	cursor: pointer;
+}
+.rect{
+	box-shadow: 0 0 20px #fff;
+}
+.rect:after{
+	content: ' ';
+	display: block;
+	width: 45px;
+	height: 30px;
+	box-shadow: inset 0 0 20px #fff;
+}
+#eraser{
+	width: 50px;
+	height: 50px;
+	margin:  5px 18px;
+	z-index: 1999;
+	position: relative;
+	float: left;
+	background: url('../imgs/eraser.png') no-repeat;
+	background-size: 50px 50px;
+}
+.eraser:after{
+	content: ' ';
+    display: block;
+    width: 41px;
+    height: 16px;
+    background: rgba(0,0,0,0);
+    box-shadow: 0 0 20px #fff;
+    position: absolute;
+    left: 2px;
+    top: 19px;
+    z-index: -999;
+    transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg); 	/* IE 9 */
+    -moz-transform:rotate(-45deg); 	/* Firefox */
+    -webkit-transform:rotate(-45deg); /* Safari 和 Chrome */
+    -o-transform:rotate(-45deg); 
+}
 
 #canvas{
 	position: fixed;
@@ -278,6 +322,17 @@ iframe{
 	border-radius: 100%;
 	pointer-events: none;
 	position: fixed;
+	top: -999px;
+	display: none\9;
+}
+#rectangle{
+	width: 1px;
+	height: 1px;
+	background: rgba(0,0,0,0);
+	border: solid 1px #aaa;
+	position: fixed;
+	left: -999px;
+	pointer-events: none;
 	display: none\9;
 }
 
